@@ -1,0 +1,23 @@
+---
+- name: apply common configuration to all hosts
+  hosts: all
+  become: yes
+  serial: "{{serial_var|default(0)}}"
+
+  roles:
+  - common
+
+- name: configure and deploy the database server
+  hosts: dbservers
+  become: yes
+
+  roles: 
+  - db
+
+- name: configure and deploy the web server
+  hosts: webservers
+  become: yes
+
+  roles:
+  - apache
+  - php 

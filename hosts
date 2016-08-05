@@ -1,0 +1,7 @@
+[webservers]
+10.42.0.6 ansible_user=vagrant
+
+[dbservers]
+10.42.0.7 ansible_user=vagrant
+
+
